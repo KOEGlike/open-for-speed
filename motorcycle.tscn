@@ -8,7 +8,7 @@ _data = [Vector2(0, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.405556, 0.967033), 0.0,
 point_count = 3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uogcr"]
-size = Vector3(1, 0.998657, 2.20068)
+size = Vector3(1, 0.998657, 2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua0m7"]
 resource_name = "MOTOCAP_luz"
@@ -602,7 +602,7 @@ front_tire_radius = 0.35
 rear_tire_radius = 0.35
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737122, -0.0673828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737122, -0.217043)
 shape = SubResource("BoxShape3D_uogcr")
 
 [node name="manubrio" type="Node3D" parent="."]
