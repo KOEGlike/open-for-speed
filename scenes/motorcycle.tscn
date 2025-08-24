@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqfp6bqy07b73"]
+[gd_scene load_steps=10 format=3 uid="uid://cqfp6bqy07b73"]
 
 [ext_resource type="Script" uid="uid://bjowxat1lejho" path="res://addons/gevp/scripts/wheel.gd" id="1_uogcr"]
 [ext_resource type="Script" uid="uid://dsmoihjqalxvh" path="res://addons/gevp/scripts/vehicle.gd" id="1_w5sw2"]
 [ext_resource type="PackedScene" uid="uid://bygpb4yvdypfr" path="res://assets/motorcycle/body.blend" id="2_0q8el"]
 [ext_resource type="PackedScene" uid="uid://cgy7wfoeuajlf" path="res://assets/motorcycle/wheel.blend" id="4_yvun0"]
 [ext_resource type="PackedScene" uid="uid://cxnwhogffe7r8" path="res://assets/motorcycle/rear_susp.blend" id="5_halfa"]
+[ext_resource type="Script" uid="uid://dnv1gno4krewa" path="res://scripts/rear_susp.gd" id="6_ca4ax"]
 [ext_resource type="PackedScene" uid="uid://dt4p2v43ymfc0" path="res://assets/motorcycle/axle.blend" id="6_kwy88"]
 
 [sub_resource type="Curve" id="Curve_w5sw2"]
@@ -86,7 +87,8 @@ transform = Transform3D(-2.24763e-08, 0, 0.514198, 0, 0.514198, 0, -0.514198, 0,
 visible = false
 
 [node name="rear_susp" parent="." instance=ExtResource("5_halfa")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0.530818, 0.0915203)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0.00540169, 0.499971, 2.36115e-10, -0.499971, 0.00540169, -2.18544e-08, 0, 0.530818, 0.0915203)
+script = ExtResource("6_ca4ax")
 
 [node name="axle2" parent="." instance=ExtResource("6_kwy88")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0.819108, -0.535394)

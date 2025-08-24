@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dreknc4ldkl3d" path="res://prototype_texture.png" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://bvcmi061lyxq4" path="res://addons/gevp/scripts/vehicle_controllergd.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://vdcv62knrkgy" path="res://addons/gevp/scripts/gui.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://cqfp6bqy07b73" path="res://motorcycle.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cqfp6bqy07b73" path="res://scenes/motorcycle.tscn" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://urtnquue2uh3" path="res://addons/gevp/scripts/camera.gd" id="3_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
