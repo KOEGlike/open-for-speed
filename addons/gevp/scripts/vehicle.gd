@@ -629,6 +629,12 @@ func _physics_process(delta : float) -> void:
 	process_drive(delta)
 	process_forces(delta)
 	process_stability()
+	process_tricks()
+
+func process_tricks():
+	if get_wheel_contact_count() == 0:
+		
+		rotate(Vector3.RIGHT, Input.get_axis("Throttle", "Brake") * 0.05)
 
 func process_drag() -> void:
 	var drag := 0.5 * air_density * pow(speed, 2.0) * frontal_area * coefficient_of_drag

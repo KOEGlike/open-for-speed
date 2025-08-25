@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://c1i5u0e8nvf2c" path="res://scripts/axle.gd" id="8_fquc6"]
 
 [sub_resource type="Curve" id="Curve_w5sw2"]
-_data = [Vector2(0, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.405556, 0.967033), 0.0, 0.0, 0, 0, Vector2(0.966667, 0.637363), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.318339, 0.852691), 0.0, 0.0, 0, 0, Vector2(0.695502, 1), 0.0, 0.0, 0, 0, Vector2(0.951557, 0.871105), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uogcr"]
 size = Vector3(1, 0.998657, 2.5)
@@ -25,7 +25,7 @@ rear_right_wheel = NodePath("RearRightRaycast")
 steering_speed_decay = 0.07
 max_steering_angle = 0.349066
 stability_yaw_ground_multiplier = 6.0
-max_torque = 400.0
+max_torque = 1000.0
 max_rpm = 4000.0
 idle_rpm = 275.0
 torque_curve = SubResource("Curve_w5sw2")
