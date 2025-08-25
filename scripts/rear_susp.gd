@@ -1,8 +1,9 @@
 extends Node3D
-@onready var motorcycle: Vehicle = $".."
-@onready var rear_right_raycast: Wheel = $"../RearRightRaycast"
+
+@export var wheel: Wheel
 
 func _process(delta: float) -> void:
-	var angle=motorcycle.rear_axle.suspension_compression_right/15
-	print("compression: ", str(motorcycle.rear_axle.suspension_compression_right), "angle: ", str(angle))
-	self.rotation_degrees.z=angle
+	var percent=wheel.spring_current_length
+	percent/=wheel.spring_length
+	self.rotation_degrees.z=percent*15
+	print("percent: ", str(percent), " length: ",str(wheel.spring_length), " current length: ", str(wheel.spring_current_length))

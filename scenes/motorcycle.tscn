@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqfp6bqy07b73"]
+[gd_scene load_steps=11 format=3 uid="uid://cqfp6bqy07b73"]
 
 [ext_resource type="Script" uid="uid://bjowxat1lejho" path="res://addons/gevp/scripts/wheel.gd" id="1_uogcr"]
 [ext_resource type="Script" uid="uid://dsmoihjqalxvh" path="res://addons/gevp/scripts/vehicle.gd" id="1_w5sw2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxnwhogffe7r8" path="res://assets/motorcycle/rear_susp.blend" id="5_halfa"]
 [ext_resource type="Script" uid="uid://dnv1gno4krewa" path="res://scripts/rear_susp.gd" id="6_ca4ax"]
 [ext_resource type="PackedScene" uid="uid://dt4p2v43ymfc0" path="res://assets/motorcycle/axle.blend" id="6_kwy88"]
+[ext_resource type="Script" uid="uid://c1i5u0e8nvf2c" path="res://scripts/axle.gd" id="8_fquc6"]
 
 [sub_resource type="Curve" id="Curve_w5sw2"]
 _data = [Vector2(0, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.405556, 0.967033), 0.0, 0.0, 0, 0, Vector2(0.966667, 0.637363), 0.0, 0.0, 0, 0]
@@ -47,11 +48,11 @@ transform = Transform3D(3.77489e-08, 2.18557e-08, 0.5, -1.78814e-07, 0.5, -2.185
 [node name="RearRightRaycast" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368, 0.707)
 script = ExtResource("1_uogcr")
-wheel_node = NodePath("Node3D")
+wheel_node = NodePath("RearRightStatic")
 
-[node name="Node3D" type="Node3D" parent="RearRightRaycast"]
+[node name="RearRightStatic" type="Node3D" parent="RearRightRaycast"]
 
-[node name="wheel" parent="RearRightRaycast/Node3D" instance=ExtResource("4_yvun0")]
+[node name="wheel" parent="RearRightRaycast/RearRightStatic" instance=ExtResource("4_yvun0")]
 transform = Transform3D(-2.24763e-08, 0, 0.514198, 0, 0.514198, 0, -0.514198, 0, -2.24763e-08, 0, 0, 0)
 
 [node name="RearLeftRaycast" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
@@ -86,9 +87,15 @@ wheel_node = NodePath("Node3D")
 transform = Transform3D(-2.24763e-08, 0, 0.514198, 0, 0.514198, 0, -0.514198, 0, -2.24763e-08, 0, 0, 0)
 visible = false
 
-[node name="rear_susp" parent="." instance=ExtResource("5_halfa")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0.00540169, 0.499971, 2.36115e-10, -0.499971, 0.00540169, -2.18544e-08, 0, 0.530818, 0.0915203)
+[node name="rear_susp" parent="." node_paths=PackedStringArray("wheel") instance=ExtResource("5_halfa")]
+transform = Transform3D(-2.18557e-08, 2.77556e-17, 0.5, 0.00540169, 0.499971, 2.36115e-10, -0.499971, 0.00540169, -2.18544e-08, 0, 0.530818, 0.0915203)
 script = ExtResource("6_ca4ax")
+wheel = NodePath("../RearRightRaycast")
 
-[node name="axle2" parent="." instance=ExtResource("6_kwy88")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0.819108, -0.535394)
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("wheel")]
+transform = Transform3D(0.999041, 0, 0.0437763, 0.0196368, 0.893748, -0.44814, -0.039125, 0.44857, 0.892891, 0, 0.363879, -0.782682)
+script = ExtResource("8_fquc6")
+wheel = NodePath("../FrontRightRaycast")
+
+[node name="axle2" parent="Node3D" instance=ExtResource("6_kwy88")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 8.88178e-16, -0.5, 0, -2.18557e-08, 0, 0.512689, 0.00418508)
