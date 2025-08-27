@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://k7mn6tfafdoc"]
+
+[ext_resource type="Script" uid="uid://bp8v2mq88mf37" path="res://scripts/tricks_manager.gd" id="1_rohvh"]
+
+[node name="TrickMamager" type="Node"]
+script = ExtResource("1_rohvh")
